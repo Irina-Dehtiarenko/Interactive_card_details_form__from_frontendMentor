@@ -1,51 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <!-- __________________________________ -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
+    <!-- The designs were created to the following widths:
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+- Mobile: 375px
+- Desktop: 1440px -->
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+    <!-- _______________________________________ -->
 
-  000
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
-  Cardholder Name
-  e.g. Jane Appleseed
+    <link rel="stylesheet" href="./style.css" />
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <aside>
+      <div class="card front-card">
+        <img src="./images/card-logo.svg" alt="card-logo" />
+        <p class="card-number">0000 0000 0000 0000</p>
+        <div class="footer-card">
+          <p class="cardholder-name">JANE APPLESEED</p>
+          <p class="exp-date">
+            <span class="month">00</span>/
+            <span class="year"> 00 </span>
+          </p>
+        </div>
+      </div>
 
-  Exp. Date (MM/YY)
-  MM
-  YY
+      <div class="card back-card">
+        <p class="cvc">000</p>
+      </div>
+    </aside>
+    <section>
+      <article class="active-form">
+        <form action="">
+          <div class="primary-data">
+            <p>CARDHOLDER NAME</p>
+            <input type="text" placeholder="e.g. Jane Applessed" />
+            <p>CARD NUMBER</p>
+            <input type="number" placeholder="e.g. 1234 5678 9123 0000" />
+          </div>
+          <div class="secondary-data">
+            <div class="date">
+              <p>EXP. DATE (MM/YY)</p>
+              <input type="number" placeholder="MM" />
+              <input type="number" placeholder="YY" />
+            </div>
+            <p>CVC</p>
+            <input type="number" placeholder="e.g. 123" />
+          </div>
+          <button>Confirm</button>
+        </form>
+      </article>
+      <!-- te dwa artykle będą się zamieniać w zależności od statusu formularzu -->
 
-  CVC
-  e.g. 123
+      <article class="complete-form" style="display: none">
+        <img src="./images/icon-complete.svg" alt="icon-complete" />
+        <h1>THANK YOU</h1>
+        <p>We've added your card details</p>
+        <button>Continue</button>
+      </article>
+    </section>
 
-  Confirm
+    <!-- ________________________ -->
+    <!-- placeholder -->
+    <!-- 0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane
+    Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC
+    e.g. 123 Confirm -->
 
-  <!-- Completed state start -->
+    <!-- ____________________ -->
 
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
+    <!-- Completed state start -->
+
+    <!-- Thank you! We've added your card details Continue -->
+
+    <!-- ________________________ -->
+
+    <!-- poniżej jest footer -->
+
+    <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  </div> -->
+
+    <script src="./main.js"></script>
+  </body>
 </html>
