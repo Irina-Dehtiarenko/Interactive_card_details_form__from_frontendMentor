@@ -34,46 +34,54 @@
     <aside>
       <div class="card front-card">
         <img src="./images/card-logo.svg" alt="card-logo" />
-        <p class="card-number">0000 0000 0000 0000</p>
-        <div class="footer-card">
-          <p class="cardholder-name">JANE APPLESEED</p>
-          <p class="exp-date">
-            <span class="month">00</span>/
-            <span class="year"> 00 </span>
-          </p>
+        <div class="card-data">
+          <p class="card-number">0000 0000 0000 0000</p>
+          <div class="card footer-card">
+            <p class="cardholder-name">JANE APPLESEED</p>
+            <p class="exp-date">
+              <span class="month">00</span>/
+              <span class="year"> 00 </span>
+            </p>
+          </div>
         </div>
       </div>
 
       <div class="card back-card">
-        <p class="cvc">000</p>
+        <div class="cvc">
+          <p class="cvc">000</p>
+        </div>
       </div>
     </aside>
     <section>
-      <article class="active-form">
+      <article class="form active-form">
         <form action="">
           <div class="primary-data">
             <p>CARDHOLDER NAME</p>
             <input type="text" placeholder="e.g. Jane Applessed" />
             <p>CARD NUMBER</p>
-            <input type="number" placeholder="e.g. 1234 5678 9123 0000" />
+            <input type="text" placeholder="e.g. 1234 5678 9123 0000" />
           </div>
           <div class="secondary-data">
             <div class="date">
               <p>EXP. DATE (MM/YY)</p>
-              <input type="number" placeholder="MM" />
-              <input type="number" placeholder="YY" />
+              <div class="numbers">
+                <input type="number" placeholder="MM" />
+                <input type="number" placeholder="YY" />
+              </div>
             </div>
-            <p>CVC</p>
-            <input type="number" placeholder="e.g. 123" />
+            <div class="cvc-number">
+              <p>CVC</p>
+              <input type="number" placeholder="e.g. 123" />
+            </div>
           </div>
           <button>Confirm</button>
         </form>
       </article>
       <!-- te dwa artykle będą się zamieniać w zależności od statusu formularzu -->
 
-      <article class="complete-form" style="display: none">
+      <article style="display: none" class="form complete-form">
         <img src="./images/icon-complete.svg" alt="icon-complete" />
-        <h1>THANK YOU</h1>
+        <h1>THANK YOU!</h1>
         <p>We've added your card details</p>
         <button>Continue</button>
       </article>

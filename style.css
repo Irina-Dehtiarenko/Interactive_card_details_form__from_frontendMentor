@@ -1,3 +1,14 @@
+:root {
+  --border-color: hsl(249, 99%, 64%), hsl(278, 94%, 30%);
+  --background-color: hsl(0, 0%, 100%);
+  --text-card: hsl(270, 3%, 87%);
+  --complite-text: hsl(279, 6%, 55%);
+  --text-active: hsl(278, 68%, 11%);
+}
+/* - White: hsl(0, 0%, 100%) - background
+- Light grayish violet: hsl(270, 3%, 87%) - text card / placeholder
+- Dark grayish violet: hsl(279, 6%, 55%) - komplite text
+- Very dark violet: hsl(278, 68%, 11%) - background button / text active / */
 * {
   margin: 0;
   padding: 0;
@@ -6,40 +17,173 @@
 body {
   display: flex;
   font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
 }
 aside {
   min-height: 100vh;
-  width: 34vw;
-
+  width: 30vw;
+  position: relative;
   background-image: url(./images/bg-main-desktop.png);
 
   background-size: cover;
 }
 .card {
   /* aspect-ratio: 1 / 1; */
-  width: 100%;
+  width: 360px;
   height: 200px;
+  letter-spacing: 2px;
+  color: var(--text-card);
   background-size: contain;
   background-repeat: no-repeat;
 }
 .front-card {
+  position: absolute;
+  top: 80px;
+  left: 200px;
   background-image: url(./images/bg-card-front.png);
 }
 .front-card img {
-  height: 15%;
+  height: 20%;
+  margin: 20px;
+}
+.card-data {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.card-data .card-number {
+  margin-top: 20px;
+  font-size: 24px;
+}
+.card-data .footer-card {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 30px;
+  font-size: 12px;
 }
 .back-card {
+  position: absolute;
+  top: 320px;
+  left: 280px;
   background-image: url(./images/bg-card-back.png);
 }
-
+.back-card div.cvc {
+  position: relative;
+}
+.back-card p.cvc {
+  position: absolute;
+  top: 86px;
+  left: 250px;
+}
 section {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  position: relative;
   width: 66vw;
   height: 100vh;
 }
 
+article {
+  position: absolute;
+  right: 10%;
+  top: 30%;
+  width: 450px;
+}
+
+::placeholder {
+  color: var(--text-card);
+}
+article p {
+  letter-spacing: 2px;
+}
+input,
+button {
+  margin: 10px 15px 20px 0;
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Space Grotesk";
+  border-radius: 8px;
+}
+input {
+  color: var(--text-active);
+  outline: none !important;
+  border: 2px solid;
+  border-top-color: var(--text-card);
+  border-left-color: var(--text-card);
+  border-bottom-color: var(--text-card);
+  border-right-color: var(--text-card);
+}
+button {
+  width: 100%;
+  color: var(--text-card);
+  background-color: var(--text-active);
+}
+input:hover,
+button:hover {
+  cursor: pointer;
+}
+input:focus,
+input:active {
+  /* nie wiem jak zrobić linear-gradient ald bordera.... */
+  /* zostawie to na razie tak */
+  outline: none !important;
+  border: 2px solid;
+  border-top-color: hsl(249, 99%, 64%);
+  border-left-color: hsl(249, 99%, 64%);
+  border-bottom-color: hsl(278, 94%, 30%);
+  border-right-color: hsl(278, 94%, 30%);
+}
+section form .primary-data input {
+  width: 100%;
+}
+section form .secondary-data {
+  display: flex;
+  width: 100%;
+}
+section form .secondary-data .date {
+  margin-right: 15px;
+  width: 60%;
+}
+section form .secondary-data .date .numbers {
+  display: flex;
+}
+section form .secondary-data .date input {
+  width: 50%;
+}
+section form .secondary-data .cvc-number input {
+  width: 100%;
+}
+
+section form button {
+  width: 100%;
+  background-color: var();
+  color: var(--background-color);
+}
+
+.complete-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.complete-form img {
+  width: 100px;
+  margin-bottom: 30px;
+}
+.complete-form h1 {
+  margin-bottom: 20px;
+  font-size: 35px;
+  letter-spacing: 5px;
+}
+.complete-form p {
+  color: var(--complite-text);
+}
+.complete-form button {
+  margin-top: 40px;
+}
 /* font:
 font-family: 'Space Grotesk', sans-serif;
 ### Body Copy
