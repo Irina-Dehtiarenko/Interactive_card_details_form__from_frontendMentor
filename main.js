@@ -25,13 +25,13 @@ const inputName = document.querySelector(".input-name");
 const cardholderName = document.querySelector("p.cardholder-name");
 const inputNumber = document.querySelector(".input-card-number");
 const cardNumber = document.querySelector("p.card-number");
+const spanMonth = document.querySelector(".month");
+console.log(spanMonth);
 
 //Imię
 const changeCardholderName = (e) => {
   cardholderName.textContent = inputName.value;
 };
-
-inputName.addEventListener("keyup", changeCardholderName);
 
 //numer karty
 const changeCardNumber = (e) => {
@@ -49,4 +49,5 @@ const changeCardNumber = (e) => {
   }
 };
 
+inputName.addEventListener("keyup", changeCardholderName);
 inputNumber.addEventListener("keyup", changeCardNumber);
