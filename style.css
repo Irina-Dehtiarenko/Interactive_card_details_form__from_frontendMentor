@@ -205,11 +205,12 @@ section form button {
   }
 
   aside {
+    z-index: 1;
     width: 100vw;
     min-height: 40vh;
   }
   .back-card {
-    top: 15%;
+    top: 11%;
     left: 25%;
     z-index: 1;
   }
@@ -219,6 +220,7 @@ section form button {
     z-index: 2;
   }
   article {
+    z-index: 2;
     /* margin-left: 0; */
     left: 10%;
   }
@@ -235,11 +237,11 @@ section form button {
     margin: 0;
   }
   .back-card {
-    top: 25%;
-    left: 15%;
+    top: 20%;
+    left: 18%;
   }
   .front-card {
-    left: 8%;
+    left: 5%;
     top: 55%;
   }
 
