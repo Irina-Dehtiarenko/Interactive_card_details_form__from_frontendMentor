@@ -25,8 +25,16 @@ const inputName = document.querySelector(".input-name");
 const cardholderName = document.querySelector("p.cardholder-name");
 const inputNumber = document.querySelector(".input-card-number");
 const cardNumber = document.querySelector("p.card-number");
+const inputMonth = document.querySelector(".input-month");
 const spanMonth = document.querySelector(".month");
-console.log(spanMonth);
+const inputYear = document.querySelector(".input-year");
+const spanYear = document.querySelector(".year");
+const inputCvc = document.querySelector(".input-cvc");
+const pCvc = document.querySelector("p.cvc");
+const buttonActiveForm = document.querySelector(".active-form form button");
+const buttonCompleteForm = document.querySelector(".complete-form button");
+const articleActiveForm = document.querySelector(".active-form");
+const articleCompleteForm = document.querySelector(".complete-form ");
 
 //Imię
 const changeCardholderName = (e) => {
@@ -40,6 +48,7 @@ const changeCardNumber = (e) => {
 
     console.log(inputNumber.value.length);
   } else {
+    // Czasowe rozwiązanie, dalej będzie funkcja po sprawdzaniu poprawności wpisanych danych po przesyłaniu inputa(jeśli wszysko ok, to na article.active form: dispay - none, )
     alert(
       "the maximum length of the card number - 19 characters (including 3 spaces), please enter it correctly, according to the example "
     );
@@ -48,6 +57,35 @@ const changeCardNumber = (e) => {
     // inputNumber.removeEventListener("keyup", changeCardNumber);
   }
 };
+const changeMonth = () => {
+  spanMonth.textContent = inputMonth.value;
+};
+const changeYear = () => {
+  spanYear.textContent = inputYear.value;
+};
+const changeCvc = () => {
+  pCvc.textContent = inputCvc.value;
+};
+const completeForm = (e) => {
+  articleActiveForm.classList.toggle("not-active");
+  articleCompleteForm.classList.toggle("not-active");
+};
+
+const dataChecking = () => {
+  completeForm();
+};
 
 inputName.addEventListener("keyup", changeCardholderName);
 inputNumber.addEventListener("keyup", changeCardNumber);
+inputMonth.addEventListener("keyup", changeMonth);
+inputYear.addEventListener("keyup", changeYear);
+inputCvc.addEventListener("keyup", changeCvc);
+buttonActiveForm.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  dataChecking();
+});
+buttonCompleteForm.addEventListener("click", (e) => {
+  e.preventDefault();
+  completeForm();
+});

@@ -235,12 +235,12 @@ section form button {
     margin: 0;
   }
   .back-card {
-    top: 5%;
+    top: 25%;
     left: 15%;
   }
   .front-card {
     left: 8%;
-    top: 50%;
+    top: 55%;
   }
 
   .back-card p.cvc {
@@ -282,9 +282,19 @@ section form button {
     font-weight: 900;
     font-size: 10px;
   }
+
+  .complete-form p {
+    text-align: center;
+  }
+
   /* .cvc-number p {
     margin-bottom: 23px;
   } */
+}
+
+/* na przyszłość klasa  dla zmiany widocznego artykułu */
+.not-active {
+  display: none;
 }
 /* font:
 font-family: 'Space Grotesk', sans-serif;
