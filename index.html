@@ -63,11 +63,12 @@
               placeholder="e.g. Jane Applessed"
             />
             <p>CARD NUMBER</p>
-            <input
+<!--             <input
               type="text"
               class="input-card-number"
               placeholder="e.g. 1234 5678 9123 0000"
-            />
+            /> -->
+            <input type="tel" class="input-card-number" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="e.g. 1234 5678 9123 0000">
           </div>
           <div class="secondary-data">
             <div class="date">
