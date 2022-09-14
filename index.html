@@ -58,12 +58,14 @@
           <div class="primary-data">
             <p>CARDHOLDER NAME</p>
             <input
+              aria-label="Caldholder name"
               type="text"
               class="input-name"
               placeholder="e.g. Jane Applessed"
             />
             <p>CARD NUMBER</p>
             <input
+              aria-label="Card Number"
               type="text"
               class="input-card-number"
               placeholder="e.g. 1234 5678 9123 0000"
@@ -73,13 +75,28 @@
             <div class="date">
               <p>EXP. DATE (MM/YY)</p>
               <div class="numbers">
-                <input type="text" class="input-month" placeholder="MM" />
-                <input type="text" class="input-year" placeholder="YY" />
+                <input
+                  aria-label="Month"
+                  type="text"
+                  class="input-month"
+                  placeholder="MM"
+                />
+                <input
+                  aria-label="Year"
+                  type="text"
+                  class="input-year"
+                  placeholder="YY"
+                />
               </div>
             </div>
             <div class="cvc-number">
               <p>CVC</p>
-              <input type="text" class="input-cvc" placeholder="e.g. 123" />
+              <input
+                aria-label="CVC number"
+                type="text"
+                class="input-cvc"
+                placeholder="e.g. 123"
+              />
             </div>
           </div>
           <button>Confirm</button>

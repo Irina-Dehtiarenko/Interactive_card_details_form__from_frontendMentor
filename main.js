@@ -35,7 +35,9 @@ const buttonActiveForm = document.querySelector(".active-form form button");
 const buttonCompleteForm = document.querySelector(".complete-form button");
 const articleActiveForm = document.querySelector(".active-form");
 const articleCompleteForm = document.querySelector(".complete-form ");
-
+alert(
+  "To jest strona przykładowa, na potrzeby nauki. Uprzejmie proszę nie wpisywać poprawnych danych w pola formularza!"
+);
 //Imię
 const changeCardholderName = (e) => {
   cardholderName.textContent = inputName.value;

@@ -125,8 +125,7 @@ input:hover,
 button:hover {
   cursor: pointer;
 }
-input:focus,
-input:active {
+input:focus {
   /* nie wiem jak zrobić linear-gradient ald bordera.... */
   /* zostawie to na razie tak */
   outline: none !important;
@@ -246,7 +245,8 @@ section form button {
   }
 
   .back-card p.cvc {
-    top: 27px;
+    top: 70px;
+    left: 230px;
 
     font-size: 15px;
   }
