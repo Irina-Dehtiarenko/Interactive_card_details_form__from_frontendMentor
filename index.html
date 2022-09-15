@@ -21,36 +21,38 @@
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
   <body>
-    <aside>
-      <div class="card front-card">
-        <img src="./images/card-logo.svg" alt="card-logo" />
-        <div class="card-data">
-          <p class="card-number">0000 0000 0000 0000</p>
-          <div class="card footer-card">
-            <p class="cardholder-name">JANE APPLESEED</p>
-            <p class="exp-date">
-              <span class="month">00</span>/
-              <span class="year"> 00 </span>
-            </p>
+    <header>
+      <aside>
+        <div class="card front-card">
+          <img src="./images/card-logo.svg" alt="card-logo" />
+          <div class="card-data">
+            <p class="card-number">0000 0000 0000 0000</p>
+            <div class="card footer-card">
+              <p class="cardholder-name">JANE APPLESEED</p>
+              <p class="exp-date">
+                <span class="month">00</span>/
+                <span class="year"> 00 </span>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="card back-card">
-        <div class="cvc">
-          <p class="cvc">000</p>
+  
+        <div class="card back-card">
+          <div class="cvc">
+            <p class="cvc">000</p>
+          </div>
         </div>
-      </div>
-    </aside>
+      </aside>
+    </header>
 <main>
   <section>
     <article class="form active-form">
-      <form action="">  
+      <form>  
         <div class="primary-data">
           <div class="form-control error">
             <p>CARDHOLDER NAME</p>
           <input
-            aria-label="Caldholder name"
+            aria-label="Cardholder name"
             class="input-name"
             minlength="3"
             placeholder="e.g. Jane Applessed"
@@ -60,17 +62,16 @@
           <p class="error"></p>
           </div>
 
-          <div name="card-container" class="form-control">
+          <div class="form-control">
             <p>CARD NUMBER</p>    
             <input
-           
+            aria-label="Card number"
               id="card"
               type="tel"
               class="input-card-number"
               inputmode="numeric"
               pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}"
               title="Only letters format: 0000 0000 0000 0000"
-              autocomplete="cc-number"
               maxlength="19"
               placeholder="e.g. 1234 5678 9123 0000"
             />
