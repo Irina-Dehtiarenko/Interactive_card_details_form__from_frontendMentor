@@ -25,7 +25,10 @@ const divsFormControl = [...document.querySelectorAll(".form-control")];
 //   "This is an example page for science. Please do not enter correct data in the form fields!"
 // );
 
-inputName.style.borderColor = "hsl(279, 6%, 84%)";
+// inputName.style.borderColor = "hsl(279, 6%, 84%)";
+// inputName.addEventListener("click", () => {
+//   inputName.parentElement.classList.remove("error");
+// });
 
 // Cardholder name
 const changeCardholderName = (e) => {
@@ -85,7 +88,7 @@ const dataChecking = () => {
     //checking the name input
 
     if (cardholderNameValue === "") {
-      inputName.style.borderColor = "red";
+      // inputName.style.borderColor = "red";
       setErrorFor(inputName, "Can't be blank");
     } else if (
       cardholderNameValue.includes("0") ||

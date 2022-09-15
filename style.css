@@ -12,6 +12,7 @@
 }
 body {
   display: flex;
+  position: relative;
   font-size: 18px;
   font-family: "Space Grotesk", sans-serif;
 }
@@ -121,15 +122,6 @@ input:hover,
 button:hover {
   cursor: pointer;
 }
-
-input.input-number:focus {
-  outline: none;
-  border: 2px solid;
-  border-top-color: hsl(249, 99%, 64%) !important;
-  border-left-color: hsl(249, 99%, 64%);
-  border-bottom-color: hsl(278, 94%, 30%);
-  border-right-color: hsl(278, 94%, 30%);
-}
 input:focus {
   /* I don't know how to make a linear gradient to a border.... */
   /* I'll leave it like that for now*/
@@ -140,8 +132,27 @@ input:focus {
   border-bottom-color: hsl(278, 94%, 30%);
   border-right-color: hsl(278, 94%, 30%);
 }
+
 .error input {
   border: 2px solid red;
+}
+
+.error input.input-name {
+  outline: none;
+  border: 2px solid;
+  border-top-color: var(--text-card);
+  border-left-color: var(--text-card);
+  border-bottom-color: var(--text-card);
+  border-right-color: var(--text-card);
+}
+
+.error input.input-name:focus {
+  outline: none;
+  border: 2px solid;
+  border-top-color: hsl(249, 99%, 64%);
+  border-left-color: hsl(249, 99%, 64%);
+  border-bottom-color: hsl(278, 94%, 30%);
+  border-right-color: hsl(278, 94%, 30%);
 }
 section form .primary-data input {
   width: 100%;
@@ -199,6 +210,26 @@ p.error {
   color: red;
 }
 
+.not-active {
+  display: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 @media (max-width: 1230px) {
   article {
     right: 0%;
@@ -235,15 +266,16 @@ p.error {
   article {
     z-index: 2;
     /* margin-left: 0; */
-    left: 10%;
     top: 200px;
+    left: 20%;
   }
 }
 @media (max-width: 376px) {
+  body {
+    min-height: 160vh;
+  }
   aside {
     width: 100vw;
-
-    /* background-repeat: repeat-x; */
   }
   .card {
     width: 300px;
@@ -293,6 +325,8 @@ p.error {
   }
   article {
     width: 320px;
+    top: 100px;
+    left: 10%;
     margin-top: 30px;
   }
   article div p {
@@ -303,47 +337,7 @@ p.error {
   .complete-form p {
     text-align: center;
   }
-
-  /* .cvc-number p {
-    margin-bottom: 23px;
-  } */
+  ::placeholder {
+    font-size: 12px;
+  }
 }
-
-/* na przyszłość klasa  dla zmiany widocznego artykułu */
-.not-active {
-  display: none;
-}
-/* font:
-font-family: 'Space Grotesk', sans-serif;
-### Body Copy
-
-- Font size: 18px
- */
-
-/* ______________________ */
-/* 
-
-colors: 
-- Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
-- Red (input errors): hsl(0, 100%, 66%)
-
-### Neutral
-
-- White: hsl(0, 0%, 100%) - background
-- Light grayish violet: hsl(270, 3%, 87%) - text card / placeholder
-- Dark grayish violet: hsl(279, 6%, 55%) - komplite text
-- Very dark violet: hsl(278, 68%, 11%) - background button / text active / */
-
-/* ______________________ */
-
-/* The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px */
-
-/* ______________________ */
-
-/* domyślne style */
-
-/* .attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); } */
