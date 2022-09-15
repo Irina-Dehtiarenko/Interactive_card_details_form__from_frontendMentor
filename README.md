@@ -37,8 +37,8 @@ Here is the screenshot of my desktop version
 
 Here is the screenshot of my desktop version
 
-![Screenshot of mobile version part 1](./screenshots/mobile1.jpg.JPG)
-![Screenshot of mobile version part 2](./screenshots/mobile2.jpg.JPG)
+![Screenshot of mobile version part 1](./screenshots/mobile1.jpg)
+![Screenshot of mobile version part 2](./screenshots/mobile2.jpg)
 
 ### Links
 
