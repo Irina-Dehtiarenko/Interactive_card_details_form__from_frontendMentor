@@ -21,14 +21,9 @@ const form = document.querySelector("form");
 const inputs = [...document.querySelectorAll("input")];
 const divsFormControl = [...document.querySelectorAll(".form-control")];
 
-// alert(
-//   "This is an example page for science. Please do not enter correct data in the form fields!"
-// );
-
-// inputName.style.borderColor = "hsl(279, 6%, 84%)";
-// inputName.addEventListener("click", () => {
-//   inputName.parentElement.classList.remove("error");
-// });
+alert(
+  "This is an example page for science. Please do not enter correct data in the form fields!"
+);
 
 // Cardholder name
 const changeCardholderName = (e) => {
@@ -100,8 +95,7 @@ const dataChecking = () => {
       cardholderNameValue.includes("6") ||
       cardholderNameValue.includes("7") ||
       cardholderNameValue.includes("8") ||
-      cardholderNameValue.includes("9") ||
-      cardholderNameValue.includes(" ")
+      cardholderNameValue.includes("9")
     ) {
       setErrorFor(inputName, "Wrong format, letters only");
       inputName.style.borderColor = "red";
