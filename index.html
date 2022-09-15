@@ -63,14 +63,19 @@
       <div id="logo"></div>
   </div> -->
           <div class="primary-data">
-            <p>CARDHOLDER NAME</p>
+            <div class="form-control error">
+              <p>CARDHOLDER NAME</p>
             <input
               aria-label="Caldholder name"
-              type="text"
               class="input-name"
+              minlength="3"
               placeholder="e.g. Jane Applessed"
+              type="text"
             />
-            <div name="card-container">
+            <p class="error error__name"></p>
+            </div>
+            <!-- <p class="error">The cardholder name should contain only letters, please enter correct</p> -->
+            <div name="card-container" class="form-control">
               <p>CARD NUMBER</p>
               <!--
                  <input
@@ -81,12 +86,14 @@
             />
             -->
             <!-- 2 version -->
+            <!-- pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" -->
               <input
                 id="card"
                 type="tel"
                 class="input-card-number"
                 inputmode="numeric"
-                pattern="[0-9]{4}' '[0-9]{4}' '[0-9]{4}' '[0-9]{4} "
+                pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}"
+                title="Only letters format: 0000 0000 0000 0000"
                 autocomplete="cc-number"
                 maxlength="19"
                 placeholder="e.g. 1234 5678 9123 0000"
@@ -100,6 +107,8 @@
                
                 placeholder="e.g. 1234 5678 9123 0000"
               /> -->
+              <p class="error error__number" ></p>
+              <!-- <p class="error">The card number should contain only numbers on format: 0000 0000 0000 0000, please enter correct</p> -->
 </div> 
 
               <div id="logo"></div>
@@ -109,21 +118,33 @@
             <div class="date">
               <p>EXP. DATE (MM/YY)</p>
               <div class="numbers">
-                <input
+                <div class="form-control">
+                  <input
                   aria-label="Month"
                   type="text"
                   class="input-month"
                   placeholder="MM"
-                  maxlength="2"
+                  pattern="[0-9]{2}"
+               title="Only numbers format 01"
                 />
+                <p class="error error__month"></p>
+                </div>
+                
+              <div class="form-control">
                 <input
-                  aria-label="Year"
-                  type="text"
-                  class="input-year"
-                  placeholder="YY"
-                  maxlength="4"
-                />
+                aria-label="Year"
+                type="text"
+                class="input-year"
+                placeholder="YY"
+                pattern="[0-9]{2}"
+               title="Only numbers format 22 = (2022)"
+
+              />
+              <p class="error error__year"></p>
               </div>
+                
+              </div>
+              <!-- <p class="error">Month should contain digits up to 12, and Month and Year should only contain digist, please enter correct</p> -->
             </div>
             <div class="cvc-number">
               <p>CVC</p>
@@ -132,9 +153,15 @@
                 type="text"
                 class="input-cvc"
                 placeholder="e.g. 123"
-                maxlength="3"
+                pattern="[0-9]{3}"
+               title="Only numbers format 000"
+    
               />
+              <p class="error error__cvc"></p>
+              <!-- <p class="error">Can't be blank or numbers only</p> -->
+
             </div>
+            
           </div>
           <button type="submit">Confirm</button>
         </form>

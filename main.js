@@ -38,7 +38,15 @@ const articleCompleteForm = document.querySelector(".complete-form ");
 const form = document.querySelector("form");
 console.log(form);
 const inputs = [...document.querySelectorAll("input")];
+// const pError = [...document.querySelectorAll("p.error")];
 
+// const pErrorName = document.querySelector(".error__name");
+// const pErrorNumber = document.querySelector(".error__number");
+// const pErrorMonth = document.querySelector(".error__month");
+// const pErrorYear = document.querySelector(".error__year");
+// const pErrorCvc = document.querySelector(".error__cvc");
+
+const divsFormControl = [...document.querySelectorAll(".form-control")];
 console.log(inputs);
 
 // alert(
@@ -72,27 +80,103 @@ const completeForm = (e) => {
   articleCompleteForm.classList.toggle("not-active");
 };
 
-const dataChecking = () => {
-  form.onsubmit = () => {
-    console.log("coś");
-    inputs.forEach((input) => {
-      if (input.value === "") {
-        console.log("wpisz coś");
-      }
-    });
-    e.preventDefault();
-  };
-  // completeForm();
+const setErrorFor = (input, message) => {
+  const formControl = input.parentElement;
+  const pError = formControl.querySelector("p.error");
+
+  formControl.classList.add("error");
+  pError.textContent = message;
 };
 
-// inputName.addEventListener("keyup", changeCardholderName);
-// inputNumber.addEventListener("keyup", changeCardNumber);
-// inputMonth.addEventListener("keyup", changeMonth);
-// inputYear.addEventListener("keyup", changeYear);
-// inputCvc.addEventListener("keyup", changeCvc);
+const setSuccessFor = (input) => {
+  const formControl = input.parentElement;
+  const pError = formControl.querySelector("p.error");
+
+  formControl.classList.remove("error");
+  pError.textContent = "";
+};
+
+const dataChecking = () => {
+  const cardholderNameValue = inputName.value.trim();
+  const cardNumberValue = inputNumber.value.trim();
+  const monthValue = inputMonth.value.trim();
+  const yearValue = inputYear.value.trim();
+  const cvcValue = inputCvc.value.trim();
+
+  //check name input
+
+  divsFormControl.forEach((div) => {
+    if (div.className === "form-control error") {
+      if (cardholderNameValue === "") {
+        setErrorFor(inputName, "Can't be blank");
+      } else if (
+        cardholderNameValue.includes("0") ||
+        cardholderNameValue.includes("1") ||
+        cardholderNameValue.includes("2") ||
+        cardholderNameValue.includes("3") ||
+        cardholderNameValue.includes("4") ||
+        cardholderNameValue.includes("5") ||
+        cardholderNameValue.includes("6") ||
+        cardholderNameValue.includes("7") ||
+        cardholderNameValue.includes("8") ||
+        cardholderNameValue.includes("9") ||
+        cardholderNameValue.includes(" ")
+      ) {
+        setErrorFor(inputName, "Wrong format, letters only");
+      } else {
+        setSuccessFor(inputName);
+      }
+
+      //check card number input
+
+      if (cardNumberValue === "") {
+        setErrorFor(inputNumber, "Can't be blank");
+      } else {
+        setSuccessFor(inputNumber);
+      }
+
+      //Check Month input
+
+      if (monthValue === "") {
+        setErrorFor(inputMonth, "Can't be blank");
+      } else {
+        if (monthValue * 1 > 12) {
+          setErrorFor(inputMonth, "There are olny 12 month in year");
+        } else {
+          setSuccessFor(inputMonth);
+        }
+      }
+
+      //Check Year input
+
+      if (yearValue === "") {
+        setErrorFor(inputYear, "Can't be blank");
+        // inputYear.parentElement.classList.add("error");
+      } else {
+        if (yearValue * 1 < 22 || yearValue * 1 > 50) {
+          setErrorFor(inputYear, "Your card is not valid");
+        } else {
+          setSuccessFor(inputYear);
+        }
+      }
+
+      //Check CVC input
+
+      if (cvcValue === "") {
+        setErrorFor(inputCvc, "Can't be blank");
+      } else {
+        setSuccessFor(inputCvc);
+      }
+    } else if (div.className === "form-control") {
+      // zły warunek
+      console.log("niema klasy error");
+      // articleActiveForm.classList.add("not-active");
+      // articleCompleteForm.classList.remove("not-active");
+    }
+  });
+};
+
 const addData = (e) => {
-  console.log(e.target.value);
-  console.log(e.target);
   if (e.target.className === "input-name") {
     changeCardholderName();
   } else if (e.target.className === "input-card-number") {
@@ -110,9 +194,31 @@ inputs.forEach((input) => {
   input.addEventListener("keyup", addData);
 });
 
-buttonActiveForm.addEventListener("click", (e) => {
+// buttonActiveForm.addEventListener("click", (e) => {
+//   dataChecking();
+//   // e.preventDefault();
+// });
+
+/* 
+const completeForm = (e) => {
+  articleActiveForm.classList.toggle("not-active");
+  articleCompleteForm.classList.toggle("not-active");
+};
+*/
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
   dataChecking();
-  // e.preventDefault();
+  // divsFormControl.forEach((div) => {
+  //   if (div.className === "form-control error") {
+  //     console.log("Tak");
+  //     dataChecking();
+  //   } else {
+  //     console.log("Nie");
+  //     articleActiveForm.classList.toggle("not-active");
+  //     articleCompleteForm.classList.toggle("not-active");
+  //   }
+  // });
 });
 
 buttonCompleteForm.addEventListener("click", (e) => {
