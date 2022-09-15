@@ -35,31 +35,30 @@ const buttonActiveForm = document.querySelector(".active-form form button");
 const buttonCompleteForm = document.querySelector(".complete-form button");
 const articleActiveForm = document.querySelector(".active-form");
 const articleCompleteForm = document.querySelector(".complete-form ");
-alert(
-  "To jest strona przykładowa, na potrzeby nauki. Uprzejmie proszę nie wpisywać poprawnych danych w pola formularza!"
-);
-//Imię
+const form = document.querySelector("form");
+console.log(form);
+const inputs = [...document.querySelectorAll("input")];
+
+console.log(inputs);
+
+// alert(
+//   "This is an example page for science. Please do not enter correct data in the form fields!"
+// );
+
+// //Imię
 const changeCardholderName = (e) => {
   cardholderName.textContent = inputName.value;
 };
 
-//numer karty
+// //numer karty
 const changeCardNumber = (e) => {
-  if (inputNumber.value.length < 20) {
-    cardNumber.textContent = inputNumber.value;
+  cardNumber.textContent = inputNumber.value;
 
-    console.log(inputNumber.value.length);
-  } else {
-    // Czasowe rozwiązanie, dalej będzie funkcja po sprawdzaniu poprawności wpisanych danych po przesyłaniu inputa(jeśli wszysko ok, to na article.active form: dispay - none, )
-    alert(
-      "the maximum length of the card number - 19 characters (including 3 spaces), please enter it correctly, according to the example "
-    );
-    cardNumber.textContent = "0000 0000 0000 0000";
-    return (inputNumber.value = "");
-    // inputNumber.removeEventListener("keyup", changeCardNumber);
-  }
+  // cardNumber.textContent = "0000 0000 0000 0000";
+
+  // inputNumber.removeEventListener("keyup", changeCardNumber);
 };
-const changeMonth = () => {
+const changeMonth = (e) => {
   spanMonth.textContent = inputMonth.value;
 };
 const changeYear = () => {
@@ -74,19 +73,48 @@ const completeForm = (e) => {
 };
 
 const dataChecking = () => {
-  completeForm();
+  form.onsubmit = () => {
+    console.log("coś");
+    inputs.forEach((input) => {
+      if (input.value === "") {
+        console.log("wpisz coś");
+      }
+    });
+    e.preventDefault();
+  };
+  // completeForm();
 };
 
-inputName.addEventListener("keyup", changeCardholderName);
-inputNumber.addEventListener("keyup", changeCardNumber);
-inputMonth.addEventListener("keyup", changeMonth);
-inputYear.addEventListener("keyup", changeYear);
-inputCvc.addEventListener("keyup", changeCvc);
-buttonActiveForm.addEventListener("click", (e) => {
-  e.preventDefault();
+// inputName.addEventListener("keyup", changeCardholderName);
+// inputNumber.addEventListener("keyup", changeCardNumber);
+// inputMonth.addEventListener("keyup", changeMonth);
+// inputYear.addEventListener("keyup", changeYear);
+// inputCvc.addEventListener("keyup", changeCvc);
+const addData = (e) => {
+  console.log(e.target.value);
+  console.log(e.target);
+  if (e.target.className === "input-name") {
+    changeCardholderName();
+  } else if (e.target.className === "input-card-number") {
+    changeCardNumber();
+  } else if (e.target.className === "input-month") {
+    changeMonth();
+  } else if (e.target.className === "input-year") {
+    changeYear();
+  } else if (e.target.className === "input-cvc") {
+    changeCvc();
+  }
+};
 
-  dataChecking();
+inputs.forEach((input) => {
+  input.addEventListener("keyup", addData);
 });
+
+buttonActiveForm.addEventListener("click", (e) => {
+  dataChecking();
+  // e.preventDefault();
+});
+
 buttonCompleteForm.addEventListener("click", (e) => {
   e.preventDefault();
   completeForm();

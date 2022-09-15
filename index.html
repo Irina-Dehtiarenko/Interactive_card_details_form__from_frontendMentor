@@ -55,6 +55,13 @@
     <section>
       <article class="form active-form">
         <form action="">
+          <!-- 
+            credit card type contener
+            c
+      <input type="text" id="card" maxlength="16" />
+      <label class="card-label" for="">Credit Card</label>
+      <div id="logo"></div>
+  </div> -->
           <div class="primary-data">
             <p>CARDHOLDER NAME</p>
             <input
@@ -63,13 +70,40 @@
               class="input-name"
               placeholder="e.g. Jane Applessed"
             />
-            <p>CARD NUMBER</p>
-            <input
+            <div name="card-container">
+              <p>CARD NUMBER</p>
+              <!--
+                 <input
               aria-label="Card Number"
               type="text"
               class="input-card-number"
               placeholder="e.g. 1234 5678 9123 0000"
             />
+            -->
+            <!-- 2 version -->
+              <input
+                id="card"
+                type="tel"
+                class="input-card-number"
+                inputmode="numeric"
+                pattern="[0-9]{4}' '[0-9]{4}' '[0-9]{4}' '[0-9]{4} "
+                autocomplete="cc-number"
+                maxlength="19"
+                placeholder="e.g. 1234 5678 9123 0000"
+              />
+
+              <!-- dla valila library -->
+              <!-- <input
+                id="card"
+                class="input-card-number"
+                maxlength="16"
+               
+                placeholder="e.g. 1234 5678 9123 0000"
+              /> -->
+</div> 
+
+              <div id="logo"></div>
+            </div>
           </div>
           <div class="secondary-data">
             <div class="date">
@@ -80,12 +114,14 @@
                   type="text"
                   class="input-month"
                   placeholder="MM"
+                  maxlength="2"
                 />
                 <input
                   aria-label="Year"
                   type="text"
                   class="input-year"
                   placeholder="YY"
+                  maxlength="4"
                 />
               </div>
             </div>
@@ -96,10 +132,11 @@
                 type="text"
                 class="input-cvc"
                 placeholder="e.g. 123"
+                maxlength="3"
               />
             </div>
           </div>
-          <button>Confirm</button>
+          <button type="submit">Confirm</button>
         </form>
       </article>
       <!-- te dwa artykle będą się zamieniać w zależności od statusu formularzu -->
@@ -108,7 +145,7 @@
         <img src="./images/icon-complete.svg" alt="icon-complete" />
         <h1>THANK YOU!</h1>
         <p>We've added your card details</p>
-        <button>Continue</button>
+        <button >Continue</button>
       </article>
     </section>
 
@@ -132,7 +169,14 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script> -->
+  
+  
+  
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="assets/cardValidator.bundle.js"></script>
+    <script src="./vanilla-card-validator-master/src/card-validator.js"></script> -->
     <script src="./main.js"></script>
   </body>
 </html>
