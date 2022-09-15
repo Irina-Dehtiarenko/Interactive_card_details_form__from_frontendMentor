@@ -5,10 +5,6 @@
   --complite-text: hsl(279, 6%, 55%);
   --text-active: hsl(278, 68%, 11%);
 }
-/* - White: hsl(0, 0%, 100%) - background
-- Light grayish violet: hsl(270, 3%, 87%) - text card / placeholder
-- Dark grayish violet: hsl(279, 6%, 55%) - komplite text
-- Very dark violet: hsl(278, 68%, 11%) - background button / text active / */
 * {
   margin: 0;
   padding: 0;
@@ -16,24 +12,21 @@
 }
 body {
   display: flex;
-  font-family: "Space Grotesk", sans-serif;
   font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
 }
 aside {
   min-height: 100vh;
   width: 30vw;
   position: relative;
   background-image: url(./images/bg-main-desktop.png);
-
   background-size: cover;
 }
 .card {
-  /* aspect-ratio: 1 / 1; */
-
   width: 360px;
   height: 200px;
-  letter-spacing: 2px;
   color: var(--text-card);
+  letter-spacing: 2px;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -112,7 +105,7 @@ button {
 }
 input {
   color: var(--text-active);
-  outline: none !important;
+  outline: none;
   border: 2px solid;
   border-top-color: var(--text-card);
   border-left-color: var(--text-card);
@@ -128,10 +121,19 @@ input:hover,
 button:hover {
   cursor: pointer;
 }
+
+input.input-number:focus {
+  outline: none;
+  border: 2px solid;
+  border-top-color: hsl(249, 99%, 64%) !important;
+  border-left-color: hsl(249, 99%, 64%);
+  border-bottom-color: hsl(278, 94%, 30%);
+  border-right-color: hsl(278, 94%, 30%);
+}
 input:focus {
-  /* nie wiem jak zrobić linear-gradient ald bordera.... */
-  /* zostawie to na razie tak */
-  outline: none !important;
+  /* I don't know how to make a linear gradient to a border.... */
+  /* I'll leave it like that for now*/
+  outline: none;
   border: 2px solid;
   border-top-color: hsl(249, 99%, 64%);
   border-left-color: hsl(249, 99%, 64%);

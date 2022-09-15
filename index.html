@@ -3,16 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-    <!-- __________________________________ -->
-
-    <!-- The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px -->
-
-    <!-- _______________________________________ -->
-
     <link
       rel="icon"
       type="image/png"
@@ -54,14 +44,7 @@
     </aside>
     <section>
       <article class="form active-form">
-        <form action="">
-          <!-- 
-            credit card type contener
-            c
-      <input type="text" id="card" maxlength="16" />
-      <label class="card-label" for="">Credit Card</label>
-      <div id="logo"></div>
-  </div> -->
+        <form action="">  
           <div class="primary-data">
             <div class="form-control error">
               <p>CARDHOLDER NAME</p>
@@ -71,23 +54,15 @@
               minlength="3"
               placeholder="e.g. Jane Applessed"
               type="text"
+              
             />
-            <p class="error error__name"></p>
+            <p class="error"></p>
             </div>
-            <!-- <p class="error">The cardholder name should contain only letters, please enter correct</p> -->
+
             <div name="card-container" class="form-control">
-              <p>CARD NUMBER</p>
-              <!--
-                 <input
-              aria-label="Card Number"
-              type="text"
-              class="input-card-number"
-              placeholder="e.g. 1234 5678 9123 0000"
-            />
-            -->
-            <!-- 2 version -->
-            <!-- pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" -->
+              <p>CARD NUMBER</p>    
               <input
+             
                 id="card"
                 type="tel"
                 class="input-card-number"
@@ -98,23 +73,13 @@
                 maxlength="19"
                 placeholder="e.g. 1234 5678 9123 0000"
               />
+              <p class="error"></p>
+            </div> 
 
-              <!-- dla valila library -->
-              <!-- <input
-                id="card"
-                class="input-card-number"
-                maxlength="16"
-               
-                placeholder="e.g. 1234 5678 9123 0000"
-              /> -->
-              <p class="error error__number" ></p>
-              <!-- <p class="error">The card number should contain only numbers on format: 0000 0000 0000 0000, please enter correct</p> -->
-</div> 
-
-              <div id="logo"></div>
             </div>
           </div>
           <div class="secondary-data">
+
             <div class="date">
               <p>EXP. DATE (MM/YY)</p>
               <div class="numbers">
@@ -125,49 +90,47 @@
                   class="input-month"
                   placeholder="MM"
                   pattern="[0-9]{2}"
-               title="Only numbers format 01"
-                />
-                <p class="error error__month"></p>
+                  title="Only numbers format 01"
+                  />
+                 <p class="error"></p>
                 </div>
                 
-              <div class="form-control">
-                <input
-                aria-label="Year"
-                type="text"
-                class="input-year"
-                placeholder="YY"
-                pattern="[0-9]{2}"
-               title="Only numbers format 22 = (2022)"
-
-              />
-              <p class="error error__year"></p>
-              </div>
-                
-              </div>
-              <!-- <p class="error">Month should contain digits up to 12, and Month and Year should only contain digist, please enter correct</p> -->
+                <div class="form-control">
+                  <input
+                  aria-label="Year"
+                  type="text"
+                  class="input-year"
+                  placeholder="YY"
+                  pattern="[0-9]{2}"
+                  title="Only numbers format 22 = (2022)"
+                  />
+                  <p class="error"></p>
+              </div>                
+                </div>
+              
             </div>
+
             <div class="cvc-number">
-              <p>CVC</p>
+              <div class="form-control">
+                <p>CVC</p>
               <input
                 aria-label="CVC number"
                 type="text"
                 class="input-cvc"
                 placeholder="e.g. 123"
                 pattern="[0-9]{3}"
-               title="Only numbers format 000"
-    
-              />
+                title="Only numbers format 000"
+                />
               <p class="error error__cvc"></p>
-              <!-- <p class="error">Can't be blank or numbers only</p> -->
-
+              </div>
             </div>
             
           </div>
           <button type="submit">Confirm</button>
         </form>
       </article>
-      <!-- te dwa artykle będą się zamieniać w zależności od statusu formularzu -->
-
+      
+<!-- Article for complete form -->
       <article class="form complete-form not-active">
         <img src="./images/icon-complete.svg" alt="icon-complete" />
         <h1>THANK YOU!</h1>
@@ -176,19 +139,7 @@
       </article>
     </section>
 
-    <!-- ________________________ -->
-    <!-- placeholder -->
-    <!-- 0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane
-    Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC
-    e.g. 123 Confirm -->
 
-    <!-- ____________________ -->
-
-    <!-- Completed state start -->
-
-    <!-- Thank you! We've added your card details Continue -->
-
-    <!-- ________________________ -->
 
     <!-- poniżej jest footer -->
 
@@ -196,14 +147,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script> -->
-  
-  
-  
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="assets/cardValidator.bundle.js"></script>
-    <script src="./vanilla-card-validator-master/src/card-validator.js"></script> -->
+
     <script src="./main.js"></script>
   </body>
 </html>
