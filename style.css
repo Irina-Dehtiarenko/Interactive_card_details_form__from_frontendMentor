@@ -17,7 +17,7 @@ body {
   min-height: 700px;
   font-family: "Space Grotesk", sans-serif;
 }
-aside {
+header {
   min-height: 100%;
   width: 30vw;
   position: relative;
@@ -252,7 +252,7 @@ footer {
     min-height: 1000px;
   }
 
-  aside {
+  header {
     z-index: 1;
     width: 100vw;
     min-height: 40vh;
@@ -278,7 +278,7 @@ footer {
   body {
     min-height: 160vh;
   }
-  aside {
+  header {
     width: 100vw;
   }
   .card {
